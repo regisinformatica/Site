@@ -39,14 +39,14 @@
       color: #007bff;
       margin-bottom: 20px;
     }
-    .services, .experience, .testimonials, .contact {
+    .services, .experience {
       background: white;
       margin-bottom: 20px;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .service-item, .testimonial {
+    .service-item {
       margin-bottom: 15px;
     }
     button {
@@ -60,17 +60,6 @@
     }
     button:hover {
       background: #218838;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    form button {
-      width: 100%;
-      background: #007bff;
     }
     footer {
       text-align: center;
@@ -95,33 +84,27 @@
     <h2>Meus Serviços</h2>
     <div class="service-item">
       <strong>Formatação e otimização</strong><br>
-      Computadores e notebooks Windows/Linux.<br>
-      <button>Agendar Serviço</button>
+      Computadores e notebooks Windows/Linux.
     </div>
     <div class="service-item">
       <strong>Remoção de vírus e malware</strong><br>
-      Proteção rápida e eficiente.<br>
-      <button>WhatsApp Agora</button>
+      Proteção rápida e eficiente.
     </div>
     <div class="service-item">
       <strong>Conserto de hardware</strong><br>
-      Placas, memórias, HD/SSD.<br>
-      <button>Agendar Visita</button>
+      Placas, memórias, HD/SSD.
     </div>
     <div class="service-item">
       <strong>Suporte remoto</strong><br>
-      Atendimento rápido pelo computador.<br>
-      <button>Iniciar Suporte</button>
+      Atendimento rápido pelo computador.
     </div>
     <div class="service-item">
       <strong>Desenvolvimento de sites</strong><br>
-      HTML, PHP, MySQL.<br>
-      <button>Ver Portfólio</button>
+      HTML, PHP, MySQL.
     </div>
     <div class="service-item">
       <strong>Consultoria para empresas</strong><br>
-      Farmácias, comunicação e outros negócios.<br>
-      <button>Contato Profissional</button>
+      Farmácias, comunicação e outros negócios.
     </div>
   </section>
 
@@ -130,27 +113,10 @@
     <p>Com mais de 10 anos gerenciando uma lan house e trabalhando com Linux, Windows, manutenção de computadores e atendimento ao cliente, já realizei serviços para farmácias, empresas de comunicação e clientes particulares. Meu objetivo é entregar soluções rápidas, seguras e eficientes, sempre com transparência e confiança.</p>
   </section>
 
-  <section class="testimonials">
-    <h2>Depoimentos</h2>
-    <div class="testimonial">
-      “Régis consertou nossos computadores com rapidez e profissionalismo.” – <strong>Empresa de comunicação</strong>
-    </div>
-    <div class="testimonial">
-      “Sempre confiável e eficiente, atendimento excelente.” – <strong>Farmácia local</strong>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
+  <section id="contact" class="experience">
     <h2>Contato</h2>
-    <p>Entre em contato para orçamento ou agendamento de serviços:</p>
     <button onclick="window.location.href='tel:+5512996560354'">📞 Ligar Agora</button>
     <button onclick="window.location.href='https://wa.me/5512996560354'">💬 WhatsApp</button>
-    <form>
-      <input type="text" placeholder="Nome" required>
-      <input type="email" placeholder="E-mail" required>
-      <textarea placeholder="Mensagem" rows="5" required></textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
   </section>
 
   <footer>
