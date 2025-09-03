@@ -1,95 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Serviços de manutenção, formatação e otimização de computadores e notebooks. Técnico experiente em Linux e Windows.">
-    <title>Régis - Técnico de Informática</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Reset básico */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background: #f4f4f4; color: #333; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        header { background: #004aad; color: #fff; padding: 20px 0; text-align: center; }
-        header h1 { margin-bottom: 10px; }
-        nav a { margin: 0 15px; color: #fff; font-weight: bold; }
-        .container { width: 90%; max-width: 1000px; margin: 20px auto; }
-        section { margin-bottom: 40px; }
-        h2 { color: #004aad; margin-bottom: 20px; text-align: center; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Serviços de manutenção, formatação e otimização de computadores e notebooks. Técnico experiente em Linux e Windows.">
+<title>Régis - Técnico de Informática</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f0f2f5; color: #333; line-height: 1.6; }
 
-        /* Serviços */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .service { background: #fff; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .service i { font-size: 40px; color: #004aad; margin-bottom: 15px; }
-        .service h3 { margin-bottom: 10px; }
+    a { text-decoration: none; color: inherit; }
 
-        /* Contato */
-        .contact { text-align: center; }
-        .contact a { display: inline-block; margin: 10px 0; background: #25d366; color: #fff; padding: 15px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
-        .contact a:hover { background: #128c7e; }
+    /* Cabeçalho */
+    header { background: linear-gradient(90deg, #004aad, #0066cc); color: #fff; padding: 25px 0; text-align: center; }
+    header h1 { margin-bottom: 10px; font-size: 2rem; }
+    nav a { margin: 0 15px; color: #fff; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #ffdd57; }
 
-        /* Responsividade */
-        @media(max-width:600px){
-            header h1 { font-size: 1.5rem; }
-        }
-    </style>
+    .container { width: 90%; max-width: 1000px; margin: 30px auto; }
+
+    section { margin-bottom: 50px; padding: 20px 0; }
+
+    h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem; }
+
+    /* Serviços */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .service { background: #fff; padding: 25px; border-radius: 15px; text-align: center; 
+               box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+    .service:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+    .service i { font-size: 45px; color: #004aad; margin-bottom: 15px; transition: color 0.3s; }
+    .service:hover i { color: #ff7f50; }
+    .service h3 { margin-bottom: 12px; }
+
+    /* Contato */
+    .contact { text-align: center; background: linear-gradient(90deg, #25d366, #128c7e); padding: 30px; border-radius: 15px; color: #fff; }
+    .contact p { margin-bottom: 15px; font-size: 1.2rem; }
+    .contact a { display: inline-block; margin-top: 10px; background: #fff; color: #128c7e; padding: 15px 30px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+    .contact a:hover { background: #f0f0f0; color: #128c7e; }
+
+    /* Responsividade */
+    @media(max-width:600px){
+        header h1 { font-size: 1.5rem; }
+        h2 { font-size: 1.5rem; }
+        .service i { font-size: 40px; }
+        .contact p { font-size: 1rem; }
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Régis - Técnico de Informática</h1>
-        <nav>
-            <a href="#services">Serviços</a>
-            <a href="#contact">Contato</a>
-        </nav>
-    </header>
 
-    <div class="container">
-        <!-- Seção de Serviços -->
-        <section id="services">
-            <h2>Meus Serviços</h2>
-            <div class="services">
-                <div class="service">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Formatação e Otimização</h3>
-                    <p>Computadores e notebooks Windows/Linux.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-shield-virus"></i>
-                    <h3>Remoção de Vírus</h3>
-                    <p>Proteção contra malware e ameaças.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-tools"></i>
-                    <h3>Conserto de Hardware</h3>
-                    <p>Placas, memórias, HD/SSD e outros componentes.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte Remoto</h3>
-                    <p>Atendimento rápido e eficiente via internet.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-globe"></i>
-                    <h3>Desenvolvimento de Sites</h3>
-                    <p>HTML, PHP, MySQL e soluções web personalizadas.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-building"></i>
-                    <h3>Consultoria para Empresas</h3>
-                    <p>Farmácias, comunicação e outros negócios.</p>
-                </div>
-            </div>
-        </section>
+<header>
+    <h1>Régis - Técnico de Informática</h1>
+    <nav>
+        <a href="#services">Serviços</a>
+        <a href="#contact">Contato</a>
+    </nav>
+</header>
 
-        <!-- Seção de Contato -->
-        <section id="contact">
-            <h2>Contato</h2>
-            <div class="contact">
-                <p>Telefone: (12) 99656-0354</p>
-                <a href="https://wa.me/5512996560354" target="_blank">WhatsApp</a>
+<div class="container">
+    <!-- Seção de Serviços -->
+    <section id="services">
+        <h2>Meus Serviços</h2>
+        <div class="services">
+            <div class="service">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Formatação e Otimização</h3>
+                <p>Computadores e notebooks Windows/Linux.</p>
             </div>
-        </section>
-    </div>
+            <div class="service">
+                <i class="fas fa-shield-virus"></i>
+                <h3>Remoção de Vírus</h3>
+                <p>Proteção contra malware e ameaças.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-tools"></i>
+                <h3>Conserto de Hardware</h3>
+                <p>Placas, memórias, HD/SSD e outros componentes.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-headset"></i>
+                <h3>Suporte Remoto</h3>
+                <p>Atendimento rápido e eficiente via internet.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-globe"></i>
+                <h3>Desenvolvimento de Sites</h3>
+                <p>HTML, PHP, MySQL e soluções web personalizadas.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-building"></i>
+                <h3>Consultoria para Empresas</h3>
+                <p>Farmácias, comunicação e outros negócios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contact">
+        <h2>Contato</h2>
+        <div class="contact">
+            <p>Telefone: (12) 99656-0354</p>
+            <a href="https://wa.me/5512996560354" target="_blank">WhatsApp</a>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>
