@@ -1,165 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Régis - Técnico de Informática</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Serviços de manutenção, formatação e otimização de computadores e notebooks. Técnico experiente em Linux e Windows.">
+<title>Régis - Técnico de Informática</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { background: #f0f2f5; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #333;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      z-index: 1000;
-    }
+    /* Cabeçalho */
+    header { background: linear-gradient(90deg, #004aad, #0066cc); color: #fff; padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
+    header h1 { margin-bottom: 10px; font-size: 2rem; }
+    nav a { margin: 0 15px; color: #fff; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #ffdd57; }
 
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
+    .container { width: 90%; max-width: 1000px; margin: 30px auto; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
+    section { margin-bottom: 50px; padding: 20px 0; }
 
-    nav ul li {
-      margin-left: 20px;
-    }
+    h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem; }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-    }
+    /* Serviços */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .service { background: #fff; padding: 25px; border-radius: 15px; text-align: center; 
+               box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+    .service:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); background: #f5f7ff; }
+    .service i { font-size: 45px; color: #004aad; margin-bottom: 15px; transition: color 0.3s, transform 0.3s; }
+    .service:hover i { color: #ff7f50; transform: scale(1.1); }
+    .service h3, .service p { transition: transform 0.3s; }
+    .service:hover h3, .service:hover p { transform: translateY(-3px); }
 
-    section {
-      padding: 100px 20px;
-    }
+    /* Contato */
+    .contact { text-align: center; background: linear-gradient(90deg, #25d366, #128c7e); padding: 30px; border-radius: 15px; color: #fff; }
+    .contact p { margin-bottom: 15px; font-size: 1.2rem; }
+    .contact a { display: inline-block; margin-top: 10px; background: #fff; color: #128c7e; padding: 15px 30px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+    .contact a:hover { background: #f0f0f0; color: #128c7e; }
 
-    #home {
-      background: #f5f5f5;
-      text-align: center;
-      padding-top: 120px;
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        padding: 15px 20px;
+        font-size: 1.5rem;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
     }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
 
-    #services {
-      background: #fff;
-      scroll-margin-top: 100px; /* <-- Correção para o título não ficar coberto */
+    /* Responsividade */
+    @media(max-width:600px){
+        header h1 { font-size: 1.5rem; }
+        h2 { font-size: 1.5rem; }
+        .service i { font-size: 40px; }
+        .contact p { font-size: 1rem; }
     }
-
-    #contact {
-      background: #f5f5f5;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .services-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .service {
-      background: #eee;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .service i {
-      font-size: 40px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #fff;
-      font-size: 14px;
-    }
-  </style>
+</style>
 </head>
 <body>
-  <header>
+
+<header data-aos="fade-down">
     <h1>Régis - Técnico de Informática</h1>
     <nav>
-      <ul>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#services">Serviços</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
+        <a href="#services">Serviços</a>
+        <a href="#contact">Contato</a>
     </nav>
-  </header>
+</header>
 
-  <section id="home">
-    <h2>Bem-vindo ao meu site</h2>
-    <p>Atendimento especializado em manutenção de computadores, suporte e desenvolvimento web.</p>
-  </section>
+<div class="container">
+    <!-- Seção de Serviços -->
+    <section id="services" data-aos="fade-up">
+        <h2>Meus Serviços</h2>
+        <div class="services">
+            <div class="service" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Formatação e Otimização</h3>
+                <p>Computadores e notebooks Windows/Linux.</p>
+            </div>
+            <div class="service" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-shield-virus"></i>
+                <h3>Remoção de Vírus</h3>
+                <p>Proteção contra malware e ameaças.</p>
+            </div>
+            <div class="service" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-tools"></i>
+                <h3>Conserto de Hardware</h3>
+                <p>Placas, memórias, HD/SSD e outros componentes.</p>
+            </div>
+            <div class="service" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-headset"></i>
+                <h3>Suporte Remoto</h3>
+                <p>Atendimento rápido e eficiente via internet.</p>
+            </div>
+            <div class="service" data-aos="zoom-in" data-aos-delay="500">
+                <i class="fas fa-globe"></i>
+                <h3>Desenvolvimento de Sites</h3>
+                <p>HTML, PHP, MySQL e soluções web personalizadas.</p>
+            </div>
+            <div class="service" data-aos="zoom-in" data-aos-delay="600">
+                <i class="fas fa-building"></i>
+                <h3>Consultoria para Empresas</h3>
+                <p>Farmácias, comunicação e outros negócios.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="services">
-    <h2>Meus Serviços</h2>
-    <div class="services-container">
-      <div class="service">
-        <i class="fa-solid fa-laptop"></i>
-        <h3>Formatação</h3>
-        <p>Formatação e otimização de computadores Windows/Linux.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-shield-virus"></i>
-        <h3>Remoção de Vírus</h3>
-        <p>Limpeza completa e proteção contra malwares.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
-        <h3>Conserto</h3>
-        <p>Troca e reparo de peças: placas, memórias, HD/SSD e outros componentes.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-headset"></i>
-        <h3>Suporte Remoto</h3>
-        <p>Atendimento online rápido e prático.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-code"></i>
-        <h3>Desenvolvimento Web</h3>
-        <p>Sites em HTML, PHP, MySQL e soluções personalizadas.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-briefcase"></i>
-        <h3>Consultoria</h3>
-        <p>Soluções de informática para empresas e negócios locais.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Seção de Contato -->
+    <section id="contact" data-aos="fade-up">
+        <h2>Contato</h2>
+        <div class="contact">
+            <p>Telefone: (12) 99656-0354</p>
+            <a href="https://wa.me/5512996560354" target="_blank">WhatsApp</a>
+        </div>
+    </section>
+</div>
 
-  <section id="contact">
-    <h2>Contato</h2>
-    <p style="text-align:center;">Entre em contato pelo telefone ou WhatsApp: <strong>(12) 99656-0354</strong></p>
-  </section>
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/5512996560354" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
-  <footer class="footer">
-    <p>© 2025 Régis. Todos os direitos reservados.</p>
-  </footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
 </body>
 </html>
