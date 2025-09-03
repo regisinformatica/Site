@@ -1,127 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Régis – Técnico em Informática</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #007bff;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #007bff;
-      margin-bottom: 20px;
-    }
-    .services, .experience {
-      background: white;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .service-item {
-      margin-bottom: 15px;
-    }
-    button {
-      background: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin-top: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background: #218838;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f1f1f1;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Régis – Técnico em Informática</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  header {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  header h1 {
+    margin: 0 0 10px 0;
+  }
+  nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .service-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .service-item svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    fill: #007bff;
+  }
+  .contact {
+    text-align: center;
+    margin-top: 20px;
+  }
+  button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #218838;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Régis – Técnico em Informática</h1>
-    <nav>
-      <a href="#services">Serviços</a>
-      <a href="#experience">Experiência</a>
-      <a href="#contact">Contato</a>
-    </nav>
-    <p>📞 <a href="tel:+5512996560354" style="color:white; text-decoration: underline;">(12) 99656-0354</a> | 💬 <a href="https://wa.me/5512996560354" style="color:white; text-decoration: underline;">WhatsApp</a></p>
-  </header>
+<header>
+  <h1>Régis – Técnico em Informática</h1>
+  <nav>
+    <a href="#services">Serviços</a>
+    <a href="#experience">Experiência</a>
+    <a href="#contact">Contato</a>
+  </nav>
+  <p>📞 <a href="tel:+5512996560354" style="color:white; text-decoration: underline;">(12) 99656-0354</a> | 💬 <a href="https://wa.me/5512996560354" style="color:white; text-decoration: underline;">WhatsApp</a></p>
+</header>
 
-  <section id="services" class="services">
-    <h2>Meus Serviços</h2>
+<section id="services">
+  <h2>Meus Serviços</h2>
+  <div class="services">
     <div class="service-item">
-      <strong>Formatação e otimização</strong><br>
-      Computadores e notebooks Windows/Linux.
+      <!-- Ícone computador -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <rect x="8" y="12" width="48" height="32" rx="2" ry="2"/>
+        <rect x="20" y="48" width="24" height="4"/>
+      </svg>
+      <strong>Formatação e otimização</strong>
+      <p>Computadores e notebooks Windows/Linux.</p>
     </div>
     <div class="service-item">
-      <strong>Remoção de vírus e malware</strong><br>
-      Proteção rápida e eficiente.
+      <!-- Ícone escudo -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <path d="M32 4l28 12v16c0 22-28 28-28 28S4 54 4 32V16z"/>
+      </svg>
+      <strong>Remoção de vírus e malware</strong>
+      <p>Proteção rápida e eficiente.</p>
     </div>
     <div class="service-item">
-      <strong>Conserto de hardware</strong><br>
-      Placas, memórias, HD/SSD.
+      <!-- Ícone ferramentas -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <path d="M8 56l20-20 8 8 24-24"/>
+      </svg>
+      <strong>Conserto de hardware</strong>
+      <p>Placas, memórias, HD/SSD.</p>
     </div>
     <div class="service-item">
-      <strong>Suporte remoto</strong><br>
-      Atendimento rápido pelo computador.
+      <!-- Ícone suporte remoto -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#007bff" stroke-width="4"/>
+        <path d="M16 32h32"/>
+      </svg>
+      <strong>Suporte remoto</strong>
+      <p>Atendimento rápido pelo computador.</p>
     </div>
     <div class="service-item">
-      <strong>Desenvolvimento de sites</strong><br>
-      HTML, PHP, MySQL.
+      <!-- Ícone código -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <path d="M20 16l-8 32h32l-8-32"/>
+      </svg>
+      <strong>Desenvolvimento de sites</strong>
+      <p>HTML, PHP, MySQL.</p>
     </div>
     <div class="service-item">
-      <strong>Consultoria para empresas</strong><br>
-      Farmácias, comunicação e outros negócios.
+      <!-- Ícone gráfico/empresa -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <rect x="12" y="24" width="8" height="28"/>
+        <rect x="28" y="16" width="8" height="36"/>
+        <rect x="44" y="8" width="8" height="44"/>
+      </svg>
+      <strong>Consultoria para empresas</strong>
+      <p>Farmácias, comunicação e outros negócios.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="experience" class="experience">
-    <h2>Experiência</h2>
-    <p>Com mais de 10 anos gerenciando uma lan house e trabalhando com Linux, Windows, manutenção de computadores e atendimento ao cliente, já realizei serviços para farmácias, empresas de comunicação e clientes particulares. Meu objetivo é entregar soluções rápidas, seguras e eficientes, sempre com transparência e confiança.</p>
-  </section>
+<section id="experience">
+  <h2>Experiência</h2>
+  <p>Com mais de 10 anos gerenciando uma lan house e trabalhando com Linux, Windows, manutenção de computadores e atendimento ao cliente, já realizei serviços para farmácias, empresas de comunicação e clientes particulares. Meu objetivo é entregar soluções rápidas, seguras e eficientes, sempre com transparência e confiança.</p>
+</section>
 
-  <section id="contact" class="experience">
-    <h2>Contato</h2>
-    <button onclick="window.location.href='tel:+5512996560354'">📞 Ligar Agora</button>
-    <button onclick="window.location.href='https://wa.me/5512996560354'">💬 WhatsApp</button>
-  </section>
+<section id="contact" class="contact">
+  <h2>Contato</h2>
+  <button onclick="window.location.href='tel:+5512996560354'">📞 Ligar Agora</button>
+  <button onclick="window.location.href='https://wa.me/5512996560354'">💬 WhatsApp</button>
+</section>
 
-  <footer>
-    &copy; 2025 Régis – Técnico em Informática | Todos os direitos reservados
-  </footer>
+<footer>
+  &copy; 2025 Régis – Técnico em Informática | Todos os direitos reservados
+</footer>
 
 </body>
 </html>
