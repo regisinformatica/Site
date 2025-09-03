@@ -1,167 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Régis – Técnico em Informática</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    color: #333;
-  }
-  header {
-    background: #007bff;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-  }
-  header h1 {
-    margin: 0 0 10px 0;
-  }
-  nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  section {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-  }
-  h2 {
-    color: #007bff;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  .service-item {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  .service-item svg {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    fill: #007bff;
-  }
-  .contact {
-    text-align: center;
-    margin-top: 20px;
-  }
-  button {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    margin: 10px 5px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #218838;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #f1f1f1;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Serviços de manutenção e formatação de computadores, notebooks, suporte remoto e desenvolvimento de sites. Contato: (12) 99656-0354">
+  <title>Régis - Técnico em Informática</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #023e8a;
+    }
+
+    .services, .portfolio, .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #0077b6;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #00b4d8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .contact a:hover {
+      background-color: #0077b6;
+    }
+
+    footer {
+      background-color: #023e8a;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsividade */
+    @media(max-width: 600px){
+      header h1 {
+        font-size: 1.6rem;
+      }
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>Régis – Técnico em Informática</h1>
+  <h1>Régis - Técnico em Informática</h1>
+  <p>Formatação, manutenção, suporte e desenvolvimento de sites</p>
   <nav>
     <a href="#services">Serviços</a>
-    <a href="#experience">Experiência</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#testimonials">Depoimentos</a>
     <a href="#contact">Contato</a>
   </nav>
-  <p>📞 <a href="tel:+5512996560354" style="color:white; text-decoration: underline;">(12) 99656-0354</a> | 💬 <a href="https://wa.me/5512996560354" style="color:white; text-decoration: underline;">WhatsApp</a></p>
 </header>
 
 <section id="services">
   <h2>Meus Serviços</h2>
   <div class="services">
-    <div class="service-item">
-      <!-- Ícone computador -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <rect x="8" y="12" width="48" height="32" rx="2" ry="2"/>
-        <rect x="20" y="48" width="24" height="4"/>
-      </svg>
-      <strong>Formatação e otimização</strong>
-      <p>Computadores e notebooks Windows/Linux.</p>
+    <div class="card">
+      <h3>Formatação e Otimização</h3>
+      <p>Windows e Linux, instalação de programas e otimização para melhor desempenho.</p>
     </div>
-    <div class="service-item">
-      <!-- Ícone escudo -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <path d="M32 4l28 12v16c0 22-28 28-28 28S4 54 4 32V16z"/>
-      </svg>
-      <strong>Remoção de vírus e malware</strong>
-      <p>Proteção rápida e eficiente.</p>
+    <div class="card">
+      <h3>Remoção de Vírus e Malware</h3>
+      <p>Limpeza completa do sistema e proteção para seu computador ou notebook.</p>
     </div>
-    <div class="service-item">
-      <!-- Ícone ferramentas -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <path d="M8 56l20-20 8 8 24-24"/>
-      </svg>
-      <strong>Conserto de hardware</strong>
-      <p>Placas, memórias, HD/SSD.</p>
+    <div class="card">
+      <h3>Conserto de Hardware</h3>
+      <p>Troca de peças, reparos em placas, memória, HD/SSD e mais.</p>
     </div>
-    <div class="service-item">
-      <!-- Ícone suporte remoto -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <circle cx="32" cy="32" r="30" fill="none" stroke="#007bff" stroke-width="4"/>
-        <path d="M16 32h32"/>
-      </svg>
-      <strong>Suporte remoto</strong>
-      <p>Atendimento rápido pelo computador.</p>
+    <div class="card">
+      <h3>Suporte Remoto</h3>
+      <p>Assistência técnica sem sair de casa, via AnyDesk ou TeamViewer.</p>
     </div>
-    <div class="service-item">
-      <!-- Ícone código -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <path d="M20 16l-8 32h32l-8-32"/>
-      </svg>
-      <strong>Desenvolvimento de sites</strong>
-      <p>HTML, PHP, MySQL.</p>
+    <div class="card">
+      <h3>Desenvolvimento de Sites</h3>
+      <p>Criação de sites em HTML, PHP e MySQL para sua empresa ou negócio.</p>
     </div>
-    <div class="service-item">
-      <!-- Ícone gráfico/empresa -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <rect x="12" y="24" width="8" height="28"/>
-        <rect x="28" y="16" width="8" height="36"/>
-        <rect x="44" y="8" width="8" height="44"/>
-      </svg>
-      <strong>Consultoria para empresas</strong>
-      <p>Farmácias, comunicação e outros negócios.</p>
+    <div class="card">
+      <h3>Consultoria para Empresas</h3>
+      <p>Especial para farmácias, empresas de comunicação e pequenos negócios.</p>
     </div>
   </div>
 </section>
 
-<section id="experience">
-  <h2>Experiência</h2>
-  <p>Com mais de 10 anos gerenciando uma lan house e trabalhando com Linux, Windows, manutenção de computadores e atendimento ao cliente, já realizei serviços para farmácias, empresas de comunicação e clientes particulares. Meu objetivo é entregar soluções rápidas, seguras e eficientes, sempre com transparência e confiança.</p>
+<section id="portfolio">
+  <h2>Portfólio</h2>
+  <div class="portfolio">
+    <div class="card">
+      <h3>Projeto 1</h3>
+      <p>Formatação e otimização completa de notebook para cliente residencial.</p>
+    </div>
+    <div class="card">
+      <h3>Projeto 2</h3>
+      <p>Suporte remoto para empresa de comunicação, resolução de problemas de rede.</p>
+    </div>
+    <div class="card">
+      <h3>Projeto 3</h3>
+      <p>Desenvolvimento de site em PHP/MySQL para farmácia local.</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="testimonials">
+  <h2>Depoimentos</h2>
+  <div class="testimonials">
+    <div class="card">
+      <h3>João Silva</h3>
+      <p>"Excelente serviço, rápido e confiável! Meu notebook ficou como novo."</p>
+    </div>
+    <div class="card">
+      <h3>Maria Oliveira</h3>
+      <p>"Régis é muito profissional. Me ajudou remotamente sem complicações."</p>
+    </div>
+    <div class="card">
+      <h3>Empresa X</h3>
+      <p>"Serviço de qualidade, equipe bem treinada e soluções eficientes."</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
   <h2>Contato</h2>
-  <button onclick="window.location.href='tel:+5512996560354'">📞 Ligar Agora</button>
-  <button onclick="window.location.href='https://wa.me/5512996560354'">💬 WhatsApp</button>
+  <div class="contact">
+    <a href="tel:+5512996560354">Ligar: (12) 99656-0354</a>
+    <a href="https://wa.me/5512996560354" target="_blank">WhatsApp</a>
+    <a href="mailto:contato@regisub.com.br">Email</a>
+  </div>
 </section>
 
 <footer>
-  &copy; 2025 Régis – Técnico em Informática | Todos os direitos reservados
+  <p>© 2025 Régis - Todos os direitos reservados</p>
 </footer>
 
 </body>
