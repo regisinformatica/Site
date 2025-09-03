@@ -1,55 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Régis - Técnico de Informática</title>
-<style>
-  body { font-family: 'Segoe UI', Arial, sans-serif; margin:0; padding:0; background:#f0f2f5; color:#333; }
-  header { background:#007acc; color:#fff; padding:40px 20px; text-align:center; }
-  header h1 { margin:0; font-size:2.2em; text-shadow: 1px 1px 2px #000; }
-  header p { margin:10px 0 0; font-size:1.2em; }
-  section { padding:30px 20px; max-width:900px; margin:0 auto; background:#fff; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.1); }
-  h2 { color:#007acc; margin-bottom:15px; text-align:center; }
-  ul { list-style:none; padding:0; }
-  li { padding:8px 0; font-size:1.1em; border-bottom:1px solid #eee; }
-  li:last-child { border-bottom:none; }
-  .contact { background:#ffcc00; padding:25px; text-align:center; font-size:1.5em; font-weight:bold; margin-top:25px; border-radius:8px; }
-  .contact a { text-decoration:none; color:#000; }
-  .image-section { text-align:center; margin:20px 0; }
-  .image-section img { max-width:80%; height:auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2); }
-  footer { text-align:center; padding:15px; background:#ddd; margin-top:20px; border-radius:0 0 10px 10px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Régis – Técnico em Informática</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .services, .experience, .testimonials, .contact {
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .service-item, .testimonial {
+      margin-bottom: 15px;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #218838;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      width: 100%;
+      background: #007bff;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Régis - Técnico de Informática</h1>
-  <p>Manutenção e Formatação de PCs – Windows e Linux</p>
-</header>
+  <header>
+    <h1>Régis – Técnico em Informática</h1>
+    <nav>
+      <a href="#services">Serviços</a>
+      <a href="#experience">Experiência</a>
+      <a href="#contact">Contato</a>
+    </nav>
+    <p>📞 <a href="tel:+5512996560354" style="color:white; text-decoration: underline;">(12) 99656-0354</a> | 💬 <a href="https://wa.me/5512996560354" style="color:white; text-decoration: underline;">WhatsApp</a></p>
+  </header>
 
-<section>
-  <h2>Serviços</h2>
-  <ul>
-    <li>Formatação e reinstalação de Windows e Linux</li>
-    <li>Remoção de vírus e malware</li>
-    <li>Limpeza de hardware e otimização</li>
-    <li>Suporte remoto</li>
-    <li>Upgrades de memória e HD/SSD</li>
-  </ul>
+  <section id="services" class="services">
+    <h2>Meus Serviços</h2>
+    <div class="service-item">
+      <strong>Formatação e otimização</strong><br>
+      Computadores e notebooks Windows/Linux.<br>
+      <button>Agendar Serviço</button>
+    </div>
+    <div class="service-item">
+      <strong>Remoção de vírus e malware</strong><br>
+      Proteção rápida e eficiente.<br>
+      <button>WhatsApp Agora</button>
+    </div>
+    <div class="service-item">
+      <strong>Conserto de hardware</strong><br>
+      Placas, memórias, HD/SSD.<br>
+      <button>Agendar Visita</button>
+    </div>
+    <div class="service-item">
+      <strong>Suporte remoto</strong><br>
+      Atendimento rápido pelo computador.<br>
+      <button>Iniciar Suporte</button>
+    </div>
+    <div class="service-item">
+      <strong>Desenvolvimento de sites</strong><br>
+      HTML, PHP, MySQL.<br>
+      <button>Ver Portfólio</button>
+    </div>
+    <div class="service-item">
+      <strong>Consultoria para empresas</strong><br>
+      Farmácias, comunicação e outros negócios.<br>
+      <button>Contato Profissional</button>
+    </div>
+  </section>
 
-  <div class="image-section">
-    <img src="https://images.unsplash.com/photo-1581092580492-0fc4c97c8c4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGNvbXB1dGVyfGVufDB8fHx8MTY5MDA1MzQ3NA&ixlib=rb-4.0.3&q=80&w=800" alt="Computador">
-  </div>
+  <section id="experience" class="experience">
+    <h2>Experiência</h2>
+    <p>Com mais de 10 anos gerenciando uma lan house e trabalhando com Linux, Windows, manutenção de computadores e atendimento ao cliente, já realizei serviços para farmácias, empresas de comunicação e clientes particulares. Meu objetivo é entregar soluções rápidas, seguras e eficientes, sempre com transparência e confiança.</p>
+  </section>
 
-  <div class="contact">
-    Ligue ou WhatsApp: <a href="tel:+5512996560354">(12) 99656-0354</a>
-  </div>
-</section>
+  <section class="testimonials">
+    <h2>Depoimentos</h2>
+    <div class="testimonial">
+      “Régis consertou nossos computadores com rapidez e profissionalismo.” – <strong>Empresa de comunicação</strong>
+    </div>
+    <div class="testimonial">
+      “Sempre confiável e eficiente, atendimento excelente.” – <strong>Farmácia local</strong>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 Régis - Todos os direitos reservados
-</footer>
+  <section id="contact" class="contact">
+    <h2>Contato</h2>
+    <p>Entre em contato para orçamento ou agendamento de serviços:</p>
+    <button onclick="window.location.href='tel:+5512996560354'">📞 Ligar Agora</button>
+    <button onclick="window.location.href='https://wa.me/5512996560354'">💬 WhatsApp</button>
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="E-mail" required>
+      <textarea placeholder="Mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Régis – Técnico em Informática | Todos os direitos reservados
+  </footer>
 
 </body>
 </html>
