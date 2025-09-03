@@ -2,66 +2,96 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Régis - Técnico de Informática</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
     }
 
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background: #111;
+      background: #333;
       color: #fff;
-      padding: 15px 0;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
       z-index: 1000;
     }
 
-    header nav a {
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
       color: #fff;
-      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 16px;
     }
 
     section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 100px 20px;
     }
 
-    section h2 {
-      margin-bottom: 20px;
+    #home {
+      background: #f5f5f5;
       text-align: center;
+      padding-top: 120px;
     }
 
-    /* Evita que o título fique coberto pelo header */
     #services {
-      scroll-margin-top: 100px;
+      background: #fff;
+      scroll-margin-top: 100px; /* <-- Correção para o título não ficar coberto */
     }
 
-    .services-grid {
+    #contact {
+      background: #f5f5f5;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .services-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .service-card {
-      background: #f4f4f4;
+    .service {
+      background: #eee;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
     }
 
-    footer {
+    .service i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .footer {
       text-align: center;
       padding: 20px;
       background: #111;
@@ -72,54 +102,63 @@
 </head>
 <body>
   <header>
+    <h1>Régis - Técnico de Informática</h1>
     <nav>
-      <a href="#home">Início</a>
-      <a href="#services">Serviços</a>
-      <a href="#contact">Contato</a>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
     </nav>
   </header>
 
   <section id="home">
-    <h2>Bem-vindo!</h2>
-    <p>Sou Régis, técnico de informática especializado em soluções para computadores Windows e Linux.</p>
+    <h2>Bem-vindo ao meu site</h2>
+    <p>Atendimento especializado em manutenção de computadores, suporte e desenvolvimento web.</p>
   </section>
 
   <section id="services">
     <h2>Meus Serviços</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Formatação e Otimização</h3>
-        <p>Formatamos e otimizamos computadores Windows e Linux, deixando sua máquina mais rápida.</p>
+    <div class="services-container">
+      <div class="service">
+        <i class="fa-solid fa-laptop"></i>
+        <h3>Formatação</h3>
+        <p>Formatação e otimização de computadores Windows/Linux.</p>
       </div>
-      <div class="service-card">
+      <div class="service">
+        <i class="fa-solid fa-shield-virus"></i>
         <h3>Remoção de Vírus</h3>
-        <p>Eliminação de vírus e malwares, com instalação de proteções extras para maior segurança.</p>
+        <p>Limpeza completa e proteção contra malwares.</p>
       </div>
-      <div class="service-card">
-        <h3>Conserto de Hardware</h3>
-        <p>Manutenção em placas, memórias, HDs, SSDs e outros componentes do seu computador.</p>
+      <div class="service">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Conserto</h3>
+        <p>Troca e reparo de peças: placas, memórias, HD/SSD e outros componentes.</p>
       </div>
-      <div class="service-card">
+      <div class="service">
+        <i class="fa-solid fa-headset"></i>
         <h3>Suporte Remoto</h3>
-        <p>Atendimento remoto rápido e prático para resolver problemas sem precisar sair de casa.</p>
+        <p>Atendimento online rápido e prático.</p>
       </div>
-      <div class="service-card">
+      <div class="service">
+        <i class="fa-solid fa-code"></i>
         <h3>Desenvolvimento Web</h3>
-        <p>Sites personalizados em HTML, PHP, MySQL e soluções sob medida para empresas.</p>
+        <p>Sites em HTML, PHP, MySQL e soluções personalizadas.</p>
       </div>
-      <div class="service-card">
+      <div class="service">
+        <i class="fa-solid fa-briefcase"></i>
         <h3>Consultoria</h3>
-        <p>Consultoria especializada para empresas, como farmácias e negócios de comunicação.</p>
+        <p>Soluções de informática para empresas e negócios locais.</p>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contato</h2>
-    <p>Entre em contato pelo WhatsApp: <strong>(12) 99656-0354</strong></p>
+    <p style="text-align:center;">Entre em contato pelo telefone ou WhatsApp: <strong>(12) 99656-0354</strong></p>
   </section>
 
-  <footer>
+  <footer class="footer">
     <p>© 2025 Régis. Todos os direitos reservados.</p>
   </footer>
 </body>
