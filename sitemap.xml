@@ -4,12 +4,4 @@
     <loc>https://regisub.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://regisub.netlify.app/#servicos</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://regisub.netlify.app/#contato</loc>
-    <priority>0.8</priority>
-  </url>
 </urlset>
