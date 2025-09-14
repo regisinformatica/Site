@@ -33,19 +33,23 @@
 
     /* Botão flutuante WhatsApp */
     .whatsapp-float {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        background-color: #25d366;
-        color: #fff;
-        border-radius: 50px;
-        padding: 15px 20px;
-        font-size: 1.5rem;
-        z-index: 100;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+    position: fixed;
+    bottom: 80px; /* afasta do footer */
+    right: 25px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    z-index: 200; /* maior que o footer */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
 
     /* Responsividade */
     @media(max-width:600px){
