@@ -16,10 +16,13 @@
 </script>
 
 <style>
+/* ===== CSS do index.html copiado ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #fff;
+    color: #333;
 }
 
 header {
@@ -43,11 +46,17 @@ main {
     padding: 20px;
 }
 
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* ===== Estilos para os cards ===== */
 .servicos {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .card-servico {
@@ -58,6 +67,11 @@ main {
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     background-color: #f9f9f9;
+    transition: transform 0.2s;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
 }
 
 .card-servico img {
@@ -108,9 +122,8 @@ footer {
 </header>
 
 <main>
+    <h1>Nossos Serviços em Ubatuba</h1>
     <section class="servicos">
-        <h1>Nossos Serviços em Ubatuba</h1>
-
         <!-- Card 1 -->
         <div class="card-servico">
             <img src="imagens/manutencao-notebook.jpg" alt="Manutenção de notebooks em Ubatuba">
