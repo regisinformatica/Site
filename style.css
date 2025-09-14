@@ -1,0 +1,46 @@
+.servicos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-servico {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-servico img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-servico h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.card-servico p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.botao-contato {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #0077cc;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-contato:hover {
+    background-color: #005fa3;
+}
