@@ -1,5 +1,4 @@
-
-    /* Reset básico */
+   /* Reset básico */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; scroll-behavior: smooth; }
     body { background: #f0f2f5; color: #333; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
@@ -55,3 +54,22 @@
         .service i { font-size: 40px; }
         .contact p { font-size: 1rem; }
     }
+
+/* Botão de contato nos cards de serviços */
+.contact-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #004aad;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #ff7f50;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
