@@ -50,3 +50,11 @@ footer p { margin: 0; }
     .service i { font-size: 40px; }
     .contact p { font-size: 1rem; }
 }
+
+.service img {
+    width: 100%;         /* Mantém responsivo */
+    max-width: 250px;    /* Largura máxima para não ficar gigante */
+    height: auto;        /* Mantém proporção */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
