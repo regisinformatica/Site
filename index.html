@@ -24,10 +24,22 @@
 <header data-aos="fade-down">
     <h1>Régis - Serviços de Redes</h1>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="servicos-rede.html">Redes</a>
-        <a href="contato.html">Contato</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Serviços <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="formatação.html">Formatação</a></li>
+                    <li><a href="windows.html">Instalação Windows</a></li>
+                    <li><a href="linux.html">Instalação Linux</a></li>
+                    <li><a href="servicos-rede.html">Redes</a></li>
+                </ul>
+            </li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
     </nav>
 </header>
 
@@ -88,5 +100,16 @@
 <script>
   AOS.init({ duration: 1000, once: true });
 </script>
+
+<!-- Script menu mobile -->
+<script>
+const menu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+menu.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
+</script>
+
 </body>
 </html>

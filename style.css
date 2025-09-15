@@ -6,8 +6,29 @@ a { text-decoration: none; color: inherit; }
 /* Cabeçalho */
 header { background: linear-gradient(90deg, #004aad, #0066cc); color: #fff; padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
 header h1 { margin-bottom: 10px; font-size: 2rem; }
-nav a { margin: 0 15px; color: #fff; font-weight: bold; transition: 0.3s; }
-nav a:hover { color: #ffdd57; }
+
+/* Menu principal */
+nav { position: relative; }
+.nav-list { list-style: none; display: flex; gap: 20px; justify-content: center; }
+.nav-list li { position: relative; }
+.nav-list a { color: #fff; font-weight: bold; padding: 10px 15px; display: block; transition: 0.3s; }
+.nav-list a:hover { color: #ffdd57; }
+
+/* Dropdown */
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #004aad; border-radius: 8px; min-width: 180px; }
+.dropdown-menu li a { padding: 10px; }
+.dropdown:hover .dropdown-menu { display: block; }
+
+/* Menu mobile */
+.menu-toggle { display: none; cursor: pointer; color: #fff; font-size: 1.5rem; position: absolute; top: 25px; right: 25px; }
+@media(max-width:768px){
+    .nav-list { display: none; flex-direction: column; background: #004aad; position: absolute; width: 100%; top: 100%; left: 0; }
+    .nav-list li { text-align: center; }
+    .menu-toggle { display: block; }
+    .nav-list.active { display: flex; }
+    .dropdown-menu { position: relative; top: 0; left: 0; border-radius: 0; }
+    .dropdown:hover .dropdown-menu { display: none; } /* Evita conflito hover mobile */
+}
 
 /* Container principal */
 .container { width: 90%; max-width: 1000px; margin: 30px auto; }
@@ -24,6 +45,14 @@ h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem;
 .service:hover i { color: #ff7f50; transform: scale(1.1); }
 .service h3, .service p { transition: transform 0.3s; }
 .service:hover h3, .service:hover p { transform: translateY(-3px); }
+
+.service img {
+    width: 100%;         
+    max-width: 250px;    
+    height: auto;        
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
 /* Botão de contato nos cards */
 .contact-btn { display: inline-block; margin-top: 15px; background: #004aad; color: #fff; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
@@ -49,12 +78,4 @@ footer p { margin: 0; }
     h2 { font-size: 1.5rem; }
     .service i { font-size: 40px; }
     .contact p { font-size: 1rem; }
-}
-
-.service img {
-    width: 100%;         /* Mantém responsivo */
-    max-width: 250px;    /* Largura máxima para não ficar gigante */
-    height: auto;        /* Mantém proporção */
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
