@@ -91,29 +91,40 @@
   AOS.init({ duration: 1000, once: true });
 </script>
 
-<!-- Menu mobile com submenu funcional -->
 <script>
+// Menu mobile
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
-const dropdowns = document.querySelectorAll('.dropdown');
 
+// Abre/fecha menu principal
 menuToggle.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
+
+// Submenus mobile
+const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.dropdown-toggle');
   toggle.addEventListener('click', (e) => {
     if(window.innerWidth <= 768){
-      e.preventDefault();
+      e.preventDefault(); // evita rolagem da página
       dropdown.classList.toggle('active');
     }
   });
 });
 
-// Fecha menu e submenu ao clicar fora
+// Fecha menu e submenus ao clicar fora
 document.addEventListener('click', (e) => {
-  if (!navList.contains(e.target) && window.innerWidth <= 768) {
+  if(!navList.contains(e.target) && window.innerWidth <= 768){
+    navList.classList.remove('active');
+    dropdowns.forEach(dd => dd.classList.remove('active'));
+  }
+});
+
+// Garante que o submenu fecha ao redimensionar a tela
+window.addEventListener('resize', () => {
+  if(window.innerWidth > 768){
     navList.classList.remove('active');
     dropdowns.forEach(dd => dd.classList.remove('active'));
   }
