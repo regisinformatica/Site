@@ -9,33 +9,29 @@ header h1 { margin-bottom: 10px; font-size: 2rem; }
 
 /* Menu principal */
 nav { position: relative; }
-.nav-list { list-style: none; display: flex; gap: 20px; justify-content: center; transition: max-height 0.5s ease; }
+.nav-list { list-style: none; display: flex; gap: 20px; justify-content: center; }
 .nav-list li { position: relative; }
 .nav-list a { color: #fff; font-weight: bold; padding: 10px 15px; display: block; transition: color 0.3s; }
 .nav-list a:hover { color: #ffdd57; }
 
-/* Dropdown com animação */
+/* Dropdown Desktop */
 .dropdown-menu { 
-    max-height: 0; 
-    overflow: hidden; 
-    transition: max-height 0.5s ease, opacity 0.5s ease; 
-    opacity: 0; 
+    display: none; 
     position: absolute; 
     top: 100%; 
     left: 0; 
     background: #004aad; 
     border-radius: 8px; 
     min-width: 180px; 
+    z-index: 50;
 }
 .dropdown-menu li a { padding: 10px; }
-.dropdown:hover .dropdown-menu { 
-    max-height: 500px; /* suficiente para caber todos os links */
-    opacity: 1; 
-}
+.dropdown:hover .dropdown-menu { display: block; } /* desktop hover abre submenu */
 
-/* Menu mobile */
-.menu-toggle { display: none; cursor: pointer; color: #fff; font-size: 1.5rem; position: absolute; top: 25px; right: 25px; transition: transform 0.3s; }
+/* Menu Mobile */
+.menu-toggle { display: none; cursor: pointer; color: #fff; font-size: 2rem; position: absolute; top: 25px; right: 25px; z-index: 150; transition: transform 0.3s; }
 .menu-toggle:hover { transform: scale(1.2); }
+
 @media(max-width:768px){
     .nav-list { 
         display: flex; 
@@ -52,8 +48,9 @@ nav { position: relative; }
     }
     .nav-list.active { max-height: 1000px; } /* abre suavemente */
     .nav-list li { text-align: center; }
-    .dropdown-menu { position: relative; top: 0; left: 0; border-radius: 0; opacity: 1; max-height: none; }
-    .dropdown:hover .dropdown-menu { max-height: none; }
+    .dropdown-menu { position: relative; top: 0; left: 0; border-radius: 0; display: none; }
+    .dropdown.active .dropdown-menu { display: block; } /* mobile click abre submenu */
+    .dropdown:hover .dropdown-menu { display: none; } /* remove hover no mobile */
     .menu-toggle { display: block; }
 }
 

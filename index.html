@@ -6,6 +6,7 @@
 <meta name="description" content="Oferecemos serviços de informática em domicílio em Ubatuba: manutenção de computadores, formatação de PCs, remoção de vírus e backup de dados. Atendimento rápido e confiável, Windows e Linux.">
 <meta name="keywords" content="manutenção de computadores, formatação de PC, remoção de vírus, backup de dados, Ubatuba, serviço em domicílio, Windows, Linux">
 <title>Serviços de Informática em Ubatuba | Manutenção, Formatação, Vírus e Backup</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -101,13 +102,22 @@
   AOS.init({ duration: 1000, once: true });
 </script>
 
-<!-- Script menu mobile -->
+<!-- Script menu mobile e submenu -->
 <script>
 const menu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
+const dropdown = document.querySelector('.dropdown');
 
 menu.addEventListener('click', () => {
   navList.classList.toggle('active');
+});
+
+// Mobile: abre/fecha submenu ao clicar
+dropdown.addEventListener('click', (e) => {
+  if(window.innerWidth <= 768){
+    e.preventDefault(); // evita abrir link principal
+    dropdown.classList.toggle('active');
+  }
 });
 </script>
 
