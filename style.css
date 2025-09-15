@@ -39,10 +39,10 @@ nav { position: relative; }
     .nav-list.active { max-height: 1000px; }
     .nav-list li { text-align: center; }
 
-    .dropdown-menu { display: none; position: relative; top: 0; left: 0; border-radius: 0; }
-    .dropdown.active .dropdown-menu { display: block; }
-    .dropdown:hover .dropdown-menu { display: none; }
-
+    /* Submenu Mobile */
+    .dropdown-menu { display: none; flex-direction: column; background: #0066cc; border-radius: 0; margin: 0; }
+    .dropdown.active .dropdown-menu { display: flex; }
+    
     .menu-toggle { display: block; }
 }
 
@@ -59,11 +59,6 @@ h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem;
 .service:hover i { color: #ff7f50; transform: scale(1.1); }
 .service h3, .service p { transition: transform 0.3s; }
 .service:hover h3, .service:hover p { transform: translateY(-3px); }
-.service img { width: 100%; max-width: 250px; height: auto; border-radius: 10px; margin-bottom: 15px; }
-
-/* Botão de contato nos cards */
-.contact-btn { display: inline-block; margin-top: 15px; background: #004aad; color: #fff; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
-.contact-btn:hover { background: #ff7f50; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
 
 /* Contato */
 .contact { text-align: center; background: linear-gradient(90deg, #25d366, #128c7e); padding: 30px; border-radius: 15px; color: #fff; }
@@ -71,7 +66,7 @@ h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem;
 .contact a { display: inline-block; margin-top: 10px; background: #fff; color: #128c7e; padding: 15px 30px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
 .contact a:hover { background: #f0f0f0; color: #128c7e; }
 
-/* Botão flutuante WhatsApp */
+/* WhatsApp flutuante */
 .whatsapp-float { position: fixed; bottom: 60px; right: 25px; background-color: #25d366; color: #fff; border-radius: 50px; padding: 15px 20px; font-size: 1.5rem; z-index: 150; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; }
 .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
 
