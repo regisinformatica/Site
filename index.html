@@ -6,19 +6,9 @@
 <meta name="description" content="Oferecemos serviços de informática em domicílio em Ubatuba: manutenção de computadores, formatação de PCs, remoção de vírus e backup de dados. Atendimento rápido e confiável, Windows e Linux.">
 <meta name="keywords" content="manutenção de computadores, formatação de PC, remoção de vírus, backup de dados, Ubatuba, serviço em domicílio, Windows, Linux">
 <title>Serviços de Informática em Ubatuba | Manutenção, Formatação, Vírus e Backup</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4BQRHMCJQE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4BQRHMCJQE');
-</script>
 </head>
 <body>
 
@@ -31,9 +21,9 @@
         <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-link">Serviços <i class="fas fa-caret-down"></i></a>
+                <a href="#" class="dropdown-toggle">Serviços <i class="fas fa-caret-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="formatação.html">Formatação</a></li>
+                    <li><a href="formatacao.html">Formatação</a></li>
                     <li><a href="windows.html">Instalação Windows</a></li>
                     <li><a href="linux.html">Instalação Linux</a></li>
                     <li><a href="servicos-rede.html">Redes</a></li>
@@ -101,23 +91,20 @@
   AOS.init({ duration: 1000, once: true });
 </script>
 
-<!-- Script menu mobile e submenu -->
+<!-- Script menu mobile com submenu -->
 <script>
 const menu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
-const dropdownLink = document.querySelector('.dropdown-link');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdown = document.querySelector('.dropdown');
 
 menu.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
 
-// Submenu mobile
-dropdownLink.addEventListener('click', (e) => {
-  if(window.innerWidth <= 768){
-    e.preventDefault();
-    dropdown.classList.toggle('active');
-  }
+dropdownToggle.addEventListener('click', (e) => {
+  e.preventDefault(); // evita rolagem ao clicar
+  dropdown.classList.toggle('active');
 });
 </script>
 
