@@ -91,15 +91,15 @@
   AOS.init({ duration: 1000, once: true });
 </script>
 
+<!-- Menu mobile com submenu funcionando -->
 <script>
-// Menu mobile
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
 const dropdowns = document.querySelectorAll('.dropdown');
 
 // Abre/fecha menu principal
 menuToggle.addEventListener('click', (e) => {
-  e.stopPropagation(); // evita que o clique feche imediatamente
+  e.stopPropagation();
   navList.classList.toggle('active');
 });
 
@@ -108,8 +108,8 @@ dropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.dropdown-toggle');
   toggle.addEventListener('click', (e) => {
     if(window.innerWidth <= 768){
-      e.preventDefault(); // evita rolagem da página
-      e.stopPropagation(); // evita fechar o menu
+      e.preventDefault();
+      e.stopPropagation();
       dropdown.classList.toggle('active');
     }
   });
@@ -123,7 +123,7 @@ document.addEventListener('click', () => {
   }
 });
 
-// Garante que o menu volte ao estado correto ao redimensionar
+// Redimensionamento
 window.addEventListener('resize', () => {
   if(window.innerWidth > 768){
     navList.classList.remove('active');

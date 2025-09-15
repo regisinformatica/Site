@@ -38,9 +38,11 @@ nav { position: relative; }
     }
     .nav-list.active { max-height: 1000px; }
     .nav-list li { text-align: center; }
-    .dropdown-menu { position: relative; top: 0; left: 0; border-radius: 0; display: none; }
+
+    .dropdown-menu { display: none; position: relative; top: 0; left: 0; border-radius: 0; }
     .dropdown.active .dropdown-menu { display: block; }
     .dropdown:hover .dropdown-menu { display: none; }
+
     .menu-toggle { display: block; }
 }
 
