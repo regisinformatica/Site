@@ -91,20 +91,32 @@
   AOS.init({ duration: 1000, once: true });
 </script>
 
-<!-- Script menu mobile com submenu -->
+<!-- Menu mobile com submenu funcional -->
 <script>
-const menu = document.getElementById('mobile-menu');
+const menuToggle = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
-const dropdownToggle = document.querySelector('.dropdown-toggle');
-const dropdown = document.querySelector('.dropdown');
+const dropdowns = document.querySelectorAll('.dropdown');
 
-menu.addEventListener('click', () => {
+menuToggle.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
 
-dropdownToggle.addEventListener('click', (e) => {
-  e.preventDefault(); // evita rolagem ao clicar
-  dropdown.classList.toggle('active');
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.dropdown-toggle');
+  toggle.addEventListener('click', (e) => {
+    if(window.innerWidth <= 768){
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    }
+  });
+});
+
+// Fecha menu e submenu ao clicar fora
+document.addEventListener('click', (e) => {
+  if (!navList.contains(e.target) && window.innerWidth <= 768) {
+    navList.classList.remove('active');
+    dropdowns.forEach(dd => dd.classList.remove('active'));
+  }
 });
 </script>
 
