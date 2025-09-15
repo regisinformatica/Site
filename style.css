@@ -15,42 +15,21 @@ nav { position: relative; }
 .nav-list a:hover { color: #ffdd57; }
 
 /* Dropdown Desktop */
-.dropdown-menu { 
-    display: none; 
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    background: #004aad; 
-    border-radius: 8px; 
-    min-width: 180px; 
-    z-index: 50;
-}
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #004aad; border-radius: 8px; min-width: 180px; z-index: 50; }
 .dropdown-menu li a { padding: 10px; }
-.dropdown:hover .dropdown-menu { display: block; } /* desktop hover abre submenu */
+.dropdown:hover .dropdown-menu { display: block; }
 
 /* Menu Mobile */
-.menu-toggle { display: none; cursor: pointer; color: #fff; font-size: 2rem; position: absolute; top: 25px; right: 25px; z-index: 150; transition: transform 0.3s; }
+.menu-toggle { display: none; cursor: pointer; color: #ffdd57; font-size: 2rem; position: absolute; top: 25px; right: 25px; z-index: 150; transition: transform 0.3s; }
 .menu-toggle:hover { transform: scale(1.2); }
 
 @media(max-width:768px){
-    .nav-list { 
-        display: flex; 
-        flex-direction: column; 
-        background: #004aad; 
-        position: absolute; 
-        width: 100%; 
-        top: 100%; 
-        left: 0; 
-        max-height: 0; 
-        overflow: hidden; 
-        transition: max-height 0.5s ease; 
-        border-radius: 0 0 10px 10px;
-    }
-    .nav-list.active { max-height: 1000px; } /* abre suavemente */
+    .nav-list { display: flex; flex-direction: column; background: #004aad; position: absolute; width: 100%; top: 100%; left: 0; max-height: 0; overflow: hidden; transition: max-height 0.5s ease; border-radius: 0 0 10px 10px; }
+    .nav-list.active { max-height: 1000px; }
     .nav-list li { text-align: center; }
     .dropdown-menu { position: relative; top: 0; left: 0; border-radius: 0; display: none; }
-    .dropdown.active .dropdown-menu { display: block; } /* mobile click abre submenu */
-    .dropdown:hover .dropdown-menu { display: none; } /* remove hover no mobile */
+    .dropdown.active .dropdown-menu { display: block; }
+    .dropdown:hover .dropdown-menu { display: none; }
     .menu-toggle { display: block; }
 }
 
@@ -62,21 +41,13 @@ h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem;
 
 /* Serviços */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-.service { background: #fff; padding: 25px; border-radius: 15px; text-align: center; 
-          box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+.service { background: #fff; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
 .service:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); background: #f5f7ff; }
 .service i { font-size: 45px; color: #004aad; margin-bottom: 15px; transition: color 0.3s, transform 0.3s; }
 .service:hover i { color: #ff7f50; transform: scale(1.1); }
 .service h3, .service p { transition: transform 0.3s; }
 .service:hover h3, .service:hover p { transform: translateY(-3px); }
-
-.service img {
-    width: 100%;         
-    max-width: 250px;    
-    height: auto;        
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+.service img { width: 100%; max-width: 250px; height: auto; border-radius: 10px; margin-bottom: 15px; }
 
 /* Botão de contato nos cards */
 .contact-btn { display: inline-block; margin-top: 15px; background: #004aad; color: #fff; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
