@@ -22,7 +22,8 @@
 
 <header data-aos="fade-down">
     <h1>Régis - Serviços de Redes</h1>
-    <nav>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="main-nav">
         <a href="index.html">Home</a>
         <div class="dropdown">
             <a href="servicos.html">Serviços</a>
@@ -92,6 +93,22 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
+
+  // JavaScript para o menu drop-down no clique
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (event) => {
+      event.stopPropagation(); // Impede que o clique feche o menu imediatamente
+      dropdown.classList.toggle('show-dropdown');
+    });
+  });
+
+  // Fechar o menu ao clicar fora dele
+  window.addEventListener('click', () => {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('show-dropdown');
+    });
+  });
 </script>
 </body>
 </html>
