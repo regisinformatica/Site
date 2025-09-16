@@ -8,78 +8,87 @@
 </head>
 <body>
 
-    <header>
-        <div class="container-header">
-            <h1>Seu Site</h1>
-            <nav class="main-nav">
-                <ul class="menu">
-                    <li><a href="#home">Home</a></li>
-                    <li class="has-submenu">
-                        <a href="#servicos">Serviços ▼</a>
-                        <ul class="submenu">
-                            <li><a href="#linux">Instalação Linux</a></li>
-                            <li><a href="#windows">Instalação Windows</a></li>
-                            <li><a href="#formatacao">Formatação</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#rede">Rede</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container-header">
+        <h1>Seu Site</h1>
+        <nav class="main-nav">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#servicos" class="submenu-toggle">Serviços ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#linux">Instalação Linux</a></li>
+                        <li><a href="#windows">Instalação Windows</a></li>
+                        <li><a href="#formatacao">Formatação</a></li>
+                    </ul>
+                </li>
+                <li><a href="#rede">Rede</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </div>
+</header>
 
-    <main class="container">
-        <section id="home">
-            <h2>Bem-vindo ao nosso site</h2>
-            <p>Serviços profissionais de informática em Ubatuba.</p>
-        </section>
+<main class="container">
+    <section id="home">
+        <h2>Bem-vindo ao nosso site</h2>
+        <p>Serviços profissionais de informática em Ubatuba.</p>
+    </section>
 
-        <section id="servicos">
-            <h2>Nossos Serviços</h2>
-            <div class="services">
-                <div class="service" id="linux">
-                    <i class="fas fa-linux"></i>
-                    <h3>Instalação Linux</h3>
-                    <p>Instalação e configuração de sistemas Linux em notebooks e desktops.</p>
-                </div>
-                <div class="service" id="windows">
-                    <i class="fas fa-windows"></i>
-                    <h3>Instalação Windows</h3>
-                    <p>Instalação e atualização de Windows 10/11 de forma segura.</p>
-                </div>
-                <div class="service" id="formatacao">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Formatação</h3>
-                    <p>Formatação completa e otimização de computadores.</p>
-                </div>
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="services">
+            <div class="service" id="linux">
+                <i class="fas fa-linux"></i>
+                <h3>Instalação Linux</h3>
+                <p>Instalação e configuração de sistemas Linux em notebooks e desktops.</p>
             </div>
-        </section>
+            <div class="service" id="windows">
+                <i class="fas fa-windows"></i>
+                <h3>Instalação Windows</h3>
+                <p>Instalação e atualização de Windows 10/11 de forma segura.</p>
+            </div>
+            <div class="service" id="formatacao">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Formatação</h3>
+                <p>Formatação completa e otimização de computadores.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="rede">
-            <h2>Serviços de Rede</h2>
-            <p>Configuração de redes, cabeamento e manutenção de equipamentos.</p>
-        </section>
+    <section id="rede">
+        <h2>Serviços de Rede</h2>
+        <p>Configuração de redes, cabeamento e manutenção de equipamentos.</p>
+    </section>
 
-        <section id="contato" class="contact">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco pelo WhatsApp ou email.</p>
-            <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
-        </section>
-    </main>
+    <section id="contato" class="contact">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco pelo WhatsApp ou email.</p>
+        <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+    </section>
+</main>
 
-    <footer>
-        <p>© 2025 Seu Site - Todos os direitos reservados</p>
-    </footer>
+<footer>
+    <p>© 2025 Seu Site - Todos os direitos reservados</p>
+</footer>
 
-    <script>
-        document.querySelectorAll('.has-submenu > a').forEach(item => {
-            item.addEventListener('click', e => {
-                e.preventDefault();
-                item.parentElement.classList.toggle('active');
-            });
+<script>
+    // Toggle menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    // Toggle submenu mobile
+    document.querySelectorAll('.submenu-toggle').forEach(item => {
+        item.addEventListener('click', e => {
+            e.preventDefault();
+            item.nextElementSibling.classList.toggle('active');
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
