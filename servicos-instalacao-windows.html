@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Serviços profissionais de instalação, formatação e atualização do sistema operacional Windows em Ubatuba.">
+<meta name="keywords" content="instalação windows, windows 10, windows 11, formatação, atualização, serviço de informática, ubatuba">
+<title>Instalação e Atualização de Windows | Serviços de Informática em Ubatuba</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style1.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4BQRHMCJQE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4BQRHMCJQE');
+</script>
+</head>
+<body>
+
+<header data-aos="fade-down">
+    <h1>Régis - Serviços de Redes</h1>
+    <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <span>Serviços</span>
+            <div class="dropdown-content">
+                <a href="servicos-instalacao-linux.html">Instalação Linux</a>
+                <a href="servicos-instalacao-windows.html">Instalação Windows</a>
+                <a href="servicos-formatacao.html">Formatação</a>
+            </div>
+        </div>
+        <a href="servicos-rede.html">Redes</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+
+<main class="container">
+    <section id="windows-service" data-aos="fade-up">
+        <h2>Instalação e Atualização de Windows</h2>
+        
+        <div class="services">
+            <div class="service" data-aos="zoom-in">
+                <i class="fab fa-windows"></i>
+                <h3>Soluções Completas para Windows</h3>
+                <p>Oferecemos serviços completos de instalação e atualização para garantir que seu sistema Windows esteja funcionando com a máxima performance e segurança. Seja para um novo computador ou para otimizar um sistema existente.</p>
+            </div>
+            
+            <div class="service" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-microchip"></i>
+                <h3>Instalação e Formatação</h3>
+                <ul>
+                    <li>Formatação segura e reinstalação limpa do Windows (10 ou 11).</li>
+                    <li>Instalação e configuração de todos os drivers essenciais.</li>
+                    <li>Criação de partições de disco otimizadas.</li>
+                    <li>Instalação de programas básicos para uso imediato.</li>
+                    <li>Configuração de rede e periféricos (impressoras, scanners, etc.).</li>
+                </ul>
+            </div>
+            
+            <div class="service" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-upload"></i>
+                <h3>Atualização de Sistema</h3>
+                <p>Seu computador está com a versão antiga do Windows? Realizamos a atualização para a versão mais recente, garantindo:</p>
+                <ul>
+                    <li>Acesso aos novos recursos do sistema.</li>
+                    <li>Melhorias de desempenho e estabilidade.</li>
+                    <li>Aplicação de todas as correções de segurança.</li>
+                    <li>Garantia de que seu sistema continuará recebendo suporte da Microsoft.</li>
+                </ul>
+            </div>
+            
+            <div class="service" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-check-circle"></i>
+                <h3>Benefícios do Serviço</h3>
+                <p>Com um sistema atualizado e bem configurado, você ganha:</p>
+                <ul>
+                    <li>Mais segurança e proteção contra ameaças.</li>
+                    <li>Maior velocidade e capacidade de resposta.</li>
+                    <li>Solução de problemas de lentidão e travamentos.</li>
+                    <li>Experiência de uso mais moderna e eficiente.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+        <h2>Pronto para Atualizar seu Windows?</h2>
+        <div class="contact">
+            <p>Entre em contato e agende a sua instalação ou atualização hoje mesmo.</p>
+            <a href="https://wa.me/5512996560354" target="_blank">WhatsApp</a>
+        </div>
+    </section>
+</main>
+
+<a href="https://wa.me/5512996560354" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+  <p>© 2025 - Todos os direitos reservados</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (event) => {
+      event.stopPropagation();
+      dropdown.classList.toggle('show-dropdown');
+    });
+  });
+
+  window.addEventListener('click', () => {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('show-dropdown');
+    });
+  });
+</script>
+</body>
+</html>
