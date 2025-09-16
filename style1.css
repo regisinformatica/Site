@@ -6,12 +6,13 @@ a { text-decoration: none; color: inherit; }
 /* Cabeçalho */
 header { background: linear-gradient(90deg, #004aad, #0066cc); color: #fff; padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
 header h1 { margin-bottom: 10px; font-size: 2rem; }
-nav a, nav .dropdown span { /* Aplica os mesmos estilos para links e a tag span */
+nav a, nav .dropdown span {
     margin: 0 15px;
     color: #fff;
     font-weight: bold;
+    font-size: 1.1rem; /* Padronização do tamanho da fonte */
     transition: 0.3s;
-    cursor: pointer; /* Adiciona o ponteiro para indicar que é clicável */
+    cursor: pointer;
 }
 nav a:hover, nav .dropdown span:hover {
     color: #ffdd57;
