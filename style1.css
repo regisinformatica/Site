@@ -10,13 +10,16 @@ nav a, nav .dropdown span {
     margin: 0 15px;
     color: #fff;
     font-weight: bold;
-    font-size: 1.1rem; /* Padronização do tamanho da fonte */
+    font-size: 1.1rem;
+    display: inline-block; /* Adicionei esta linha para padronizar o comportamento */
+    line-height: 1;      /* Adicionei esta linha para garantir o alinhamento vertical */
     transition: 0.3s;
     cursor: pointer;
 }
 nav a:hover, nav .dropdown span:hover {
     color: #ffdd57;
 }
+
 
 /* Container principal */
 .container { width: 90%; max-width: 1000px; margin: 30px auto; }
