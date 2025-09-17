@@ -6,19 +6,27 @@
 
 <title>Régis - Serviços de Redes | Ubatuba</title>
 <meta name="description" content="Instalação e manutenção de redes para empresas, departamentos e residências. Cabeamento, Wi-Fi, Wesh e configuração em modo bridge.">
+<meta name="keywords" content="instalação de rede, manutenção de rede, redes wireless, wifi, cabeamento, ubatuba">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style1.css">
 
 </head>
 <body>
 
 <header data-aos="fade-down">
     <h1>Régis - Serviços de Redes</h1>
-    <nav>
+    <nav id="main-nav">
         <a href="index.html">Home</a>
-        <a href="servicos.html">Serviços</a>
+        <div class="dropdown">
+            <span>Serviços</span>
+            <div class="dropdown-content">
+                <a href="servicos-instalacao-linux.html">Instalação Linux</a>
+                <a href="servicos-instalacao-windows.html">Instalação Windows</a>
+                <a href="servicos-formatacao.html">Formatação</a>
+            </div>
+        </div>
         <a href="servicos-rede.html">Redes</a>
         <a href="contato.html">Contato</a>
     </nav>
@@ -64,6 +72,21 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
+  // JavaScript para o menu drop-down no clique
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (event) => {
+      event.stopPropagation(); // Impede que o clique feche o menu imediatamente
+      dropdown.classList.toggle('show-dropdown');
+    });
+  });
+
+  // Fechar o menu ao clicar fora dele
+  window.addEventListener('click', () => {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('show-dropdown');
+    });
+  });
 </script>
 
 </body>
