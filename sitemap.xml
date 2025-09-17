@@ -4,10 +4,7 @@
     <loc>https://regisub.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://regisub.netlify.app/servicos.html</loc>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://regisub.netlify.app/servicos-rede.html</loc>
     <priority>0.8</priority>
@@ -16,4 +13,48 @@
     <loc>https://regisub.netlify.app/contato.html</loc>
     <priority>0.8</priority>
   </url>
+
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-conserto-hardware.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-consultoria-empresas.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-desenvolvimento-sites.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-formatacao.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-instalacao-linux.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-instalacao-windows.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-remocao-virus.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://regisub.netlify.app/servicos-suporte-remoto.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+
 </urlset>
