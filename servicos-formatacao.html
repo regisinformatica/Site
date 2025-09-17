@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Instalação de Sistemas e Aplicativos | Técnico de Informática Ubatuba</title>
+<title>Formatação e Instalação de Sistemas | Técnico de Informática Ubatuba</title>
 
 <meta name="description" content="Formatação de computadores, instalação de sistemas operacionais e aplicativos para Windows e Linux em Ubatuba. Atendimento rápido e confiável.">
 <meta name="keywords" content="formatação de computadores Ubatuba, instalação Windows Ubatuba, instalação Linux Ubatuba, instalação de aplicativos Ubatuba, suporte técnico Ubatuba">
 
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Instalação de Sistemas e Aplicativos em Ubatuba">
 <meta property="og:description" content="Formatação, instalação de sistemas operacionais e aplicativos para Windows e Linux. Atendimento rápido e confiável em Ubatuba.">
 <meta property="og:type" content="website">
@@ -20,7 +19,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style1.css">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BQRHMCJQE"></script>
 <script>
@@ -33,11 +32,18 @@
 <body>
 
 <header data-aos="fade-down">
-    <h1>Régis - Formatação e Instalação</h1>
-    <nav>
+    <h1>Régis - Serviços de Redes</h1>
+    <nav id="main-nav">
         <a href="index.html">Home</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="instalacao.html">Instalação</a>
+        <div class="dropdown">
+            <span>Serviços</span>
+            <div class="dropdown-content">
+                <a href="servicos-instalacao-linux.html">Instalação Linux</a>
+                <a href="servicos-instalacao-windows.html">Instalação Windows</a>
+                <a href="servicos-formatacao.html">Formatação</a>
+            </div>
+        </div>
+        <a href="servicos-rede.html">Redes</a>
         <a href="contato.html">Contato</a>
     </nav>
 </header>
@@ -81,6 +87,21 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
+  // JavaScript para o menu drop-down no clique
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (event) => {
+      event.stopPropagation(); // Impede que o clique feche o menu imediatamente
+      dropdown.classList.toggle('show-dropdown');
+    });
+  });
+
+  // Fechar o menu ao clicar fora dele
+  window.addEventListener('click', () => {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('show-dropdown');
+    });
+  });
 </script>
 
 <script type="application/ld+json">
