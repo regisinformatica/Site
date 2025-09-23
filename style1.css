@@ -11,15 +11,14 @@ nav a, nav .dropdown span {
     color: #fff;
     font-weight: bold;
     font-size: 1.1rem;
-    display: inline-block; /* Adicionei esta linha para padronizar o comportamento */
-    line-height: 1;      /* Adicionei esta linha para garantir o alinhamento vertical */
+    display: inline-block;
+    line-height: 1;
     transition: 0.3s;
     cursor: pointer;
 }
 nav a:hover, nav .dropdown span:hover {
     color: #ffdd57;
 }
-
 
 /* Container principal */
 .container { width: 90%; max-width: 1000px; margin: 30px auto; }
@@ -29,7 +28,7 @@ h2 { color: #004aad; margin-bottom: 30px; text-align: center; font-size: 1.8rem;
 
 /* Serviços */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-.service { background: #fff; padding: 25px; border-radius: 15px; text-align: center; 
+.service { background: #fff; padding: 25px; border-radius: 15px; text-align: center;
           box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
 .service:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); background: #f5f7ff; }
 .service i { font-size: 45px; color: #004aad; margin-bottom: 15px; transition: color 0.3s, transform 0.3s; }
@@ -64,9 +63,9 @@ footer p { margin: 0; }
 }
 
 .service img {
-    width: 100%;         /* Mantém responsivo */
-    max-width: 250px;    /* Largura máxima para não ficar gigante */
-    height: auto;        /* Mantém proporção */
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -108,6 +107,126 @@ footer p { margin: 0; }
     display: block;
 }
 
+/* --- CSS para a Página de Vídeos (Galeria de Miniaturas) --- */
 
+/* Seção da galeria de vídeos */
+.video-gallery-section {
+    background: #f0f2f5;
+    padding: 50px 0;
+}
 
+/* Container da grade de miniaturas */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
 
+/* Card individual de cada vídeo */
+.video-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Imagem da miniatura, com uma regra que evita o conflito */
+.video-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.video-card h3 {
+    color: #004aad;
+    font-size: 1.2rem;
+}
+
+/* Controles de paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.pagination-btn {
+    background: #004aad;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pagination-btn:hover {
+    background: #ff7f50;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.pagination-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Modal de exibição do vídeo */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover, .modal-close:focus {
+    color: #ff7f50;
+    text-decoration: none;
+    cursor: pointer;
+}
