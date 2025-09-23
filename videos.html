@@ -21,60 +21,75 @@
     <link rel="stylesheet" href="style1.css">
 
     <style>
-        /* Estilos específicos para o carrossel de vídeos */
-        .video-carousel-section {
+        /* Estilos para a galeria de vídeos */
+        .video-gallery-section {
             background: #f0f2f5;
             padding: 50px 0;
         }
-        .video-carousel {
-            position: relative;
-            overflow: hidden;
-            max-width: 1000px;
-            margin: 0 auto;
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .video-card {
+            background: #fff;
+            padding: 25px;
             border-radius: 15px;
+            text-align: center;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .carousel-item video {
+
+        .video-card img {
             width: 100%;
             height: auto;
-            border-radius: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 74, 173, 0.7);
-            color: white;
+        
+        .video-card h3 {
+            color: #004aad;
+            font-size: 1.2rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .pagination-btn {
+            background: #004aad;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
             border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
             cursor: pointer;
-            font-size: 1.5rem;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: 0.3s;
         }
-        .carousel-btn:hover {
-            background-color: rgba(0, 74, 173, 1);
-            transform: translateY(-50%) scale(1.1);
+
+        .pagination-btn:hover {
+            background: #ff7f50;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
-        .carousel-btn.prev-btn {
-            left: 10px;
-        }
-        .carousel-btn.next-btn {
-            right: 10px;
-        }
-        @media(max-width: 768px) {
-            .carousel-btn {
-                padding: 8px 12px;
-                font-size: 1.2rem;
-            }
+
+        .pagination-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -101,13 +116,13 @@
     </header>
 
     <main class="container">
-        <section id="videos-section" data-aos="fade-up">
-            <h2>Nossos Vídeos</h2>
-            <div class="video-carousel">
-                <div class="carousel-track">
-                    </div>
-                <button class="carousel-btn prev-btn">&lt;</button>
-                <button class="carousel-btn next-btn">&gt;</button>
+        <section id="videos-section" class="video-gallery-section" data-aos="fade-up">
+            <h2>Galeria de Vídeos</h2>
+            <div class="video-grid">
+                </div>
+            <div class="pagination">
+                <button class="pagination-btn" id="prev-btn" disabled>Anterior</button>
+                <button class="pagination-btn" id="next-btn">Próxima</button>
             </div>
         </section>
     </main>
@@ -122,7 +137,6 @@
     <script>
       AOS.init({ duration: 1000, once: true });
 
-      // JavaScript para o menu drop-down no clique
       const dropdowns = document.querySelectorAll('.dropdown');
       dropdowns.forEach(dropdown => {
         dropdown.addEventListener('click', (event) => {
@@ -137,71 +151,94 @@
         });
       });
 
-      // Funcionalidade do Carrossel de Vídeos com numeração automática
+      // Lógica da galeria de vídeos com paginação
       document.addEventListener('DOMContentLoaded', () => {
-          const carousel = document.querySelector('.video-carousel');
-          if (!carousel) return;
+          const videoGrid = document.querySelector('.video-grid');
+          const prevBtn = document.getElementById('prev-btn');
+          const nextBtn = document.getElementById('next-btn');
 
-          const track = carousel.querySelector('.carousel-track');
-          const prevBtn = carousel.querySelector('.prev-btn');
-          const nextBtn = carousel.querySelector('.next-btn');
-          
-          let currentIndex = 0;
-          let videoCount = 1;
-          const videos = [];
+          const videosPerPage = 6;
+          let currentPage = 0;
+          let videoData = []; // Array para armazenar os dados dos vídeos
 
-          // Adiciona os vídeos de forma dinâmica
+          // Função para carregar os vídeos e miniaturas
           const loadVideos = () => {
-              for (let i = 1; i <= 20; i++) { // Tenta carregar até 20 vídeos
+              // Tenta carregar até 20 vídeos
+              for (let i = 1; i <= 20; i++) {
+                  // Você precisa criar miniaturas para cada vídeo!
+                  // Ex: videos/thumbnails/1.jpg, videos/thumbnails/2.jpg etc.
+                  const thumbnailPath = `videos/thumbnails/${i}.jpg`;
                   const videoPath = `videos/${i}.mp4`;
-                  const videoElement = document.createElement('video');
-                  videoElement.src = videoPath;
-                  videoElement.controls = true;
-                  videoElement.muted = true; // Necessário para a reprodução automática em alguns navegadores
-
-                  // Cria um elemento de item do carrossel para cada vídeo
-                  const carouselItem = document.createElement('div');
-                  carouselItem.classList.add('carousel-item');
-                  carouselItem.appendChild(videoElement);
                   
-                  // Verifica se o vídeo existe
-                  videoElement.addEventListener('canplaythrough', () => {
-                      videos.push(carouselItem);
-                      track.appendChild(carouselItem);
-                      if (videos.length === 1) { // Garante que o carrossel só mostre algo depois de carregar o primeiro
-                        track.style.display = 'flex';
-                      }
-                  });
-
-                  // Se o vídeo não for encontrado (código de erro 4), para o loop
-                  videoElement.addEventListener('error', (e) => {
-                      if (e.target.error.code === 4) {
-                          // Se este for o primeiro vídeo e ele não for encontrado,
-                          // o carrossel ficará vazio. Trate essa exceção se necessário.
-                          videoCount = i - 1;
-                      }
-                  });
+                  // Simula uma requisição para verificar se o arquivo existe
+                  // Na realidade, esta verificação não é perfeita em JS puro por
+                  // questões de segurança, mas serve como um bom ponto de partida.
+                  const img = new Image();
+                  img.src = thumbnailPath;
+                  img.onload = () => {
+                      // Se a miniatura carregar, adiciona o vídeo à lista
+                      videoData.push({
+                          id: i,
+                          videoSrc: videoPath,
+                          thumbnailSrc: thumbnailPath,
+                          title: `Vídeo ${i}` // Título genérico
+                      });
+                      renderVideos();
+                  };
               }
           };
 
-          loadVideos();
+          const renderVideos = () => {
+              videoGrid.innerHTML = '';
+              const start = currentPage * videosPerPage;
+              const end = start + videosPerPage;
+              const videosToDisplay = videoData.slice(start, end);
 
-          // Lógica de navegação
-          function updateCarousel() {
-              if (videos.length > 0) {
-                  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-              }
-          }
+              videosToDisplay.forEach(video => {
+                  const videoCard = document.createElement('div');
+                  videoCard.classList.add('video-card');
+                  videoCard.setAttribute('data-aos', 'zoom-in');
+                  videoCard.setAttribute('data-aos-delay', '100');
+                  
+                  // Adiciona a imagem da miniatura e o título
+                  videoCard.innerHTML = `
+                      <img src="${video.thumbnailSrc}" alt="Miniatura do Vídeo ${video.id}">
+                      <h3>${video.title}</h3>
+                  `;
+                  
+                  // Adiciona um evento de clique para abrir o vídeo em um pop-up
+                  videoCard.addEventListener('click', () => {
+                      // AQUI: Implementar a lógica de pop-up ou redirecionamento
+                      // Por exemplo: window.open(video.videoSrc, '_blank');
+                      alert(`Reproduzindo ${video.title}. Implemente aqui a lógica de pop-up.`);
+                  });
 
-          nextBtn.addEventListener('click', () => {
-              currentIndex = (currentIndex + 1) % videos.length;
-              updateCarousel();
-          });
+                  videoGrid.appendChild(videoCard);
+              });
+
+              updatePaginationButtons();
+          };
+
+          const updatePaginationButtons = () => {
+              prevBtn.disabled = currentPage === 0;
+              nextBtn.disabled = (currentPage + 1) * videosPerPage >= videoData.length;
+          };
 
           prevBtn.addEventListener('click', () => {
-              currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-              updateCarousel();
+              if (currentPage > 0) {
+                  currentPage--;
+                  renderVideos();
+              }
           });
+
+          nextBtn.addEventListener('click', () => {
+              if ((currentPage + 1) * videosPerPage < videoData.length) {
+                  currentPage++;
+                  renderVideos();
+              }
+          });
+
+          loadVideos();
       });
     </script>
 </body>
