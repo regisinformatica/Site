@@ -117,8 +117,9 @@ footer p { margin: 0; }
 
 /* Container da grade de miniaturas */
 .video-grid {
+    /* CORREÇÃO AQUI - A largura mínima foi reduzida para se adaptar a telas menores */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
