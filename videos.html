@@ -149,3 +149,37 @@
 
           const updatePaginationButtons = () => {
               prevBtn.disabled = currentPage === 0;
+              nextBtn.disabled = (currentPage + 1) * videosPerPage >= videoData.length;
+          };
+
+          prevBtn.addEventListener('click', () => {
+              if (currentPage > 0) {
+                  currentPage--;
+                  renderVideos();
+              }
+          });
+
+          nextBtn.addEventListener('click', () => {
+              if ((currentPage + 1) * videosPerPage < videoData.length) {
+                  currentPage++;
+                  renderVideos();
+              }
+          });
+
+          modalClose.addEventListener('click', () => {
+              videoModal.style.display = 'none';
+              videoPlayer.pause();
+          });
+
+          window.addEventListener('click', (event) => {
+              if (event.target === videoModal) {
+                  videoModal.style.display = 'none';
+                  videoPlayer.pause();
+              }
+          });
+
+          loadVideos();
+      });
+    </script>
+</body>
+</html>
