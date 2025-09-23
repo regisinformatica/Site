@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNGBK3TX7"></script>
+    <script async src="https://googletagmanager.com/gtag/js?id=G-YZNGBK3TX7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -29,7 +29,7 @@
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* CORREÇÃO AQUI */
             gap: 25px;
             margin-top: 30px;
         }
@@ -49,14 +49,11 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
-        /* O ajuste foi feito aqui: usei uma regra mais específica para forçar o tamanho. */
         .video-card img {
             width: 100%;
             height: auto;
-            max-width: 300px; /* Garante que a imagem não seja maior que a coluna */
-            display: block;   /* Remove o espaço em branco abaixo da imagem */
-            margin: 0 auto 15px; /* Centraliza a imagem e adiciona margem inferior */
             border-radius: 10px;
+            margin-bottom: 15px;
         }
         
         .video-card h3 {
