@@ -219,6 +219,7 @@
           let videoData = [];
 
           const loadVideos = () => {
+              // Simula a verificação de 20 vídeos para encontrar os que existem.
               for (let i = 1; i <= 20; i++) {
                   const thumbnailPath = `videos/thumbnails/${i}.jpg`;
                   const videoPath = `videos/${i}.mp4`;
@@ -232,6 +233,7 @@
                           thumbnailSrc: thumbnailPath,
                           title: `Vídeo ${i}`
                       });
+                      videoData.sort((a, b) => a.id - b.id); // Garante a ordem numérica
                       renderVideos();
                   };
               }
@@ -285,7 +287,6 @@
               }
           });
 
-          // Fecha o pop-up ao clicar no botão de fechar ou fora dele
           modalClose.addEventListener('click', () => {
               videoModal.style.display = 'none';
               videoPlayer.pause();
