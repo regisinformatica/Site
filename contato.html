@@ -85,3 +85,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     dropdown.classList.toggle('show-dropdown');
                 });
             });
+            window.addEventListener('click', () => {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show-dropdown');
+                });
+            });
+        });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Régis - Técnico de Informática",
+  "image": "https://regisub.netlify.app/imagens/logo.png",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ubatuba"
+  },
+  "telephone": "+5512996560354",
+  "email": "contato@regisub.netlify.app",
+  "url": "https://regisub.netlify.app/contato.html",
+  "description": "Entre em contato com Régis para serviços de manutenção, formatação, instalação de software e backup de dados em Ubatuba."
+}
+</script>
+
+</body>
+</html>
