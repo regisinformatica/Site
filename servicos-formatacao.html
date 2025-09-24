@@ -2,16 +2,13 @@
 <html lang="pt-BR">
 <head>
 
-<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNGBK3TX7"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YZNGBK3TX7'); </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNGBK3TX7"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YZNGBK3TX7'); </script>
 
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WKD5NWXT');</script>
-<!-- End Google Tag Manager -->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,28 +39,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKD5NWXT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-<header data-aos="fade-down">
-    <h1>Régis Leão - Técnico de informática</h1>
-    <nav id="main-nav">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <span>Serviços</span>
-            <div class="dropdown-content">
-                <a href="servicos-instalacao-linux.html">Instalação Linux</a>
-                <a href="servicos-instalacao-windows.html">Instalação Windows</a>
-                <a href="servicos-formatacao.html">Formatação</a>
-            </div>
-        </div>
-        <a href="servicos-rede.html">Redes</a>
-        <a href="contato.html">Contato</a>
-    </nav>
-</header>
+<div id="menu-placeholder"></div>
 
 <main class="container">
     <h2 data-aos="fade-down">Formatação e Instalação de Sistemas</h2>
@@ -103,22 +81,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 800, once: true });
-  // JavaScript para o menu drop-down no clique
-  const dropdowns = document.querySelectorAll('.dropdown');
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', (event) => {
-      event.stopPropagation(); // Impede que o clique feche o menu imediatamente
-      dropdown.classList.toggle('show-dropdown');
-    });
-  });
+    fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-placeholder').innerHTML = data;
+            AOS.init({ duration: 800, once: true });
 
-  // Fechar o menu ao clicar fora dele
-  window.addEventListener('click', () => {
-    dropdowns.forEach(dropdown => {
-      dropdown.classList.remove('show-dropdown');
-    });
-  });
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    dropdown.classList.toggle('show-dropdown');
+                });
+            });
+            window.addEventListener('click', () => {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show-dropdown');
+                });
+            });
+        });
 </script>
 
 <script type="application/ld+json">
