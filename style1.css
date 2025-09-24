@@ -7,14 +7,14 @@ a { text-decoration: none; color: inherit; }
 header { background: linear-gradient(90deg, #004aad, #0066cc); color: #fff; padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
 header h1 { 
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Aumentei o tamanho da fonte para 2.5rem */
     line-height: 1.2;
 }
 header h1 span {
     display: block;
     font-size: 0.8rem;
     font-weight: normal;
-    margin-top: 5px; /* Ajustei a margem para reduzir a distância */
+    margin-top: 5px;
     opacity: 0.8;
 }
 nav a, nav .dropdown span {
