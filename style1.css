@@ -7,7 +7,7 @@ a { text-decoration: none; color: inherit; }
 header { background: linear-gradient(90deg, #004aad, #0066cc); color: #fff; padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
 header h1 { 
     margin: 0;
-    font-size: 2.5rem; /* Aumentei o tamanho da fonte para 2.5rem */
+    font-size: 4rem !important; /* Aumentei o tamanho e adicionei !important */
     line-height: 1.2;
 }
 header h1 span {
@@ -67,7 +67,7 @@ footer p { margin: 0; }
 
 /* Responsividade */
 @media(max-width:600px){
-    header h1 { font-size: 1.5rem; }
+    header h1 { font-size: 2rem !important; }
     h2 { font-size: 1.5rem; }
     .service i { font-size: 40px; }
     .contact p { font-size: 1rem; }
